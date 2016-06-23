@@ -1,0 +1,28 @@
+body{
+	heigh:1000px;
+	width: 100%;
+	border: solid lightcoral;
+}
+
+#navigation{
+	height: 100px;
+	width: 100%;
+	margin: 20px;
+	margin-right: 10px;
+	border: solid 1px red;
+}
+
+#main{
+	height: 900px;
+	width: 100%;
+	border: solid 1px orange;
+	
+}
+
+#bottom{
+	height: 100px;
+	width: 100%;
+	border: solid 1px yellow;
+}
+
+

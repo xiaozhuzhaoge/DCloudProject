@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-3.0.0.min.js" ></script>
+		<script type="text/javascript" src="js/getDate.js" ></script>
+		 <style type="text/css">
+		 	p{
+		 		background: gray;
+		 		 
+		 	}
+		 	
+		 	div{
+		 		background: yellow;
+		 		border: 1px solid #2AC845;
+		 		margin: 0 5px;
+		 		width:  100px;
+		 		height: 100px;
+		 		float: left;
+		 	}
+		 	
+		 	.colored{
+		 		background: green;
+		 	}
+		 	
+		 	
+		 </style>
+		
+		<script>
+			$(function(){
+				$("#div").click(function(){
+					$("div.animated").toggleClass("colored");
+				});
+			})
+			function animatedIt()
+			{
+				$("#mover").slideToggle("slow",animatedIt());
+			}
+			
+			animatedIt();
+		</script>
+		
+		<script>
+			var picArr = new Array("1.jpg","2.jpg","3.jpg");
+			var index = 0;
+			
+			function showNext(){
+			   var picture = document.getElementById("picture");	
+			   index++;
+			   if(index >= picArr.length)
+			   {
+			   	  index = 0;
+			   }
+			   picture.src = "resource/" + picArr[index];
+			   
+			}
+			
+			function showPrevous()
+			{
+			   var picture = document.getElementById("picture");
+			   index--;
+			   if(index < 0)
+			   {
+			   	  index = picArr.length - 1;
+			   }
+			   picture.src = "resource/" + picArr[index];
+			}
+			
+		    function tweenMove(ele, target){
+		    	
+		    }
+			
+		</script>
+		
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+		</script>
+	
+		<div id="div"></div>
+		<div ></div>
+		<div></div>
+		
+			<img id="picture" src="resource/1.jpg"/>
+			<br />
+			<button id="prev" type="button" class="mui-btn mui-btn-blue">播放上一张</button>
+		    <button id="next" class="mui-btn mui-btn-blue">播放下一张</button>	
+		
+  
+ 	<p class="s">设施</p>
+	<p>设施</p>
+	<p>设施</p>
+	<p>设施</p>
+ 				
+ 	<a class="mui-active" name="a1-e" id="a1" href="#" hreflang="en">ssdfs</a>
+ 	<a class="mui-active" name="a1-p" id="a2" href="#" hreflang="zh">sfsdfds</a>
+ 	
+ 	<input id="a1a" name="a"/>
+ 	<input id="aaa" name="b"/>
+ 	<input id="bbb" name="s a s"/>
+ 	<input id="ccc" name="aa"/>
+ 	
+	</body>
+
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js" ></script>
+	<script>
+	   $(function()
+	   {
+	   	 //$("[id=a1]").css("color","red");
+	   	 $("input[id][name $='a']").val("hhshss");
+	   });
+	</script>
+
+    <script>
+    	    var btr1 = document.getElementById("prev");
+			var btr2 = document.getElementById("next");
+			btr1.onclick = function()
+			{
+				showPrevous();
+			}
+			btr2.onclick = function()
+			{
+				showNext();
+			}
+    </script>
+</html>

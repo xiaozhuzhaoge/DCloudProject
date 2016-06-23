@@ -1,0 +1,21 @@
+{
+  "login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "loginModule/register.html"
+    ]
+  },
+  "loginModule/register.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/HttpCore/HttpBase.js"
+    ],
+    "refer": []
+  }
+}
