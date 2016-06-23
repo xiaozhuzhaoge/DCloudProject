@@ -14,7 +14,8 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css",
-      "js/HttpCore/HttpBase.js"
+      "js/HttpCore/HttpBase.js",
+      "js/jquery-3.0.0.min.js"
     ],
     "refer": []
   }
