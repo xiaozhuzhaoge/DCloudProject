@@ -40,6 +40,19 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/mui.min.css",
+			"css/style.css",
+			"js/mui.enterfocus.js",
+			"js/app.js"
+		],
+		"refer": [
+			"login/main.html"
+		]
+	},
+	"login/main.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css",
 			"css/style.css"
 		]
 	}
