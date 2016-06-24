@@ -9,78 +9,76 @@
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			
 		</script>
-		
-		
-		
+
 		<header class="mui-bar mui-bar-nav">
-		    <h1 class="mui-title">登录</h1>
+			<h1 class="mui-title">登录</h1>
 		</header>
 		<style type="text/css">
-			.mui-content{
+
+			.mui-content {
 				margin-top: 5%;
 			}
-		    .mui-content-padded{
-		    	margin-top: 5%;
-		    }
-		    
-		    .mui-badge{
-		    	background: white;
-		    }
-		    
-		    
-		    .mui-icon-weibo{
-		    	font-size:40px;
-		    	color: red;
-		    
-		    }
-		    .mui-icon-weixin{
-		    	font-size:40px;
-		    	color:green
-		    }
-		    
-		    .mui-icon-qq{
-		    	font-size:40px;
-		    	color: #007AFF;
-		    }
-		    #title{
-		    	font-size:20px;
-		    }
-		    
-		    #loginBtr{
-		    	margin-top: 80%;
-		    }
-		   
+			
+			.mui-content-padded {
+				margin-top: 5%;
+			}
+			
+			.mui-badge {
+				background: white;
+			}
+			
+			.mui-icon-weibo {
+				font-size: 40px;
+				color: red;
+			}
+			
+			.mui-icon-weixin {
+				font-size: 40px;
+				color: green
+			}
+			
+			.mui-icon-qq {
+				font-size: 40px;
+				color: #007AFF;
+			}
+			
+			#title {
+				font-size: 20px;
+			}
+			
+			#loginBtr {
+				margin-top: 70%;
+			}
 		</style>
 	</head>
 
 	<body>
-		
+
 		<div class="mui-content">
-			
+
 			<form class="mui-input-group">
-			    <div class="mui-input-row">
-			        <label>用户名</label>
-			        <input id="username" type="text" class="mui-input-clear" placeholder="请输入用户名">
-			        
-			    </div>
-			    <div class="mui-input-row">
-			        <label>密码</label>
-			        <input id="password" type="text" class="mui-input-clear" placeholder="请输入密码">
-			        
-			    </div>
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input id="username" type="text" class="mui-input-clear" placeholder="请输入用户名">
+
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id="password" type="text" class="mui-input-clear" placeholder="请输入密码">
+
+				</div>
 			</form>
-			
+
 			<div class="mui-content-padded">
-				<button id="loginBtr" type="button" class="mui-btn mui-btn-blue mui-btn-block">登录</button>
-			    <button id="registerBtr" type="button" class="mui-btn mui-btn-green mui-btn-block">注册</button>
+				<button id="loginBtr" type="button" class="mui-btn mui-btn-red mui-btn-block">登录</button>
+				<button id="registerBtr" type="button" class="mui-btn mui-btn-green mui-btn-block">注册</button>
 			</div>
-			
+
 			<div class="mui-content-padded" align="center">
 				<button class="mui-badge">
 					<span class="mui-icon mui-icon-weixin"></span>
-				</button> 
+				</button>
 				<button class="mui-badge">
 				<span class="mui-icon mui-icon-qq"></span>
 				</button>
@@ -89,24 +87,48 @@
 				</button>
 
 			</div>
-			</div>
+		</div>
 		</div>
 	</body>
-	
+
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="js/HttpCore/HttpBase.js" ></script>
+	<script type="text/javascript" src="js/Connectors/ConnectLogin.js" ></script>
 	<script>
-			var register = document.getElementById("registerBtr");
-		    
-			  function reg(){
-			  	 mui.toast("register");
-			  	 mui.openWindow({
-			  	 	url:'loginModule/register.html',
-			  	 	id:'reg'});
-			  };
-			  
-			  register.onclick = function(){
-			  	reg();
-			  }
-			 
+		var register = document.getElementById("registerBtr");
+
+		function reg() {
+
+			mui.openWindow({
+				url: 'loginModule/register.html',
+				id: 'reg'
+			});
+		};
+
+		register.onclick = function() {
+			reg();
+			usernameInput.value = "";
+			passwordInput.value = "";
+		}
+
+		var login = document.getElementById("loginBtr");
+        var usernameInput = document.getElementById("username");
+        var passwordInput = document.getElementById("password");
+      
+		function startlogin() {
+
+			var data = new Object();
+			data.username = usernameInput.value;
+			data.password = passwordInput.value;
+            StartLogin(data,'index.html');
+		};
+
+		login.onclick = function() {
+			mui.toast("开始登录");
+			startlogin();
+			usernameInput.value = "";
+			passwordInput.value = "";
+		}
 	</script>
 
 </html>

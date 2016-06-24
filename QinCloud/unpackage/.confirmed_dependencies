@@ -3,10 +3,14 @@
     "resources": [
       "js/mui.min.js",
       "fonts/mui.ttf",
-      "css/mui.min.css"
+      "css/mui.min.css",
+      "js/jquery-3.0.0.min.js",
+      "js/HttpCore/HttpBase.js",
+      "js/Connectors/ConnectLogin.js"
     ],
     "refer": [
-      "loginModule/register.html"
+      "loginModule/register.html",
+      "index.html"
     ]
   },
   "loginModule/register.html": {
@@ -15,7 +19,17 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "js/HttpCore/HttpBase.js",
-      "js/jquery-3.0.0.min.js"
+      "js/jquery-3.0.0.min.js",
+      "js/Connectors/ConnectLogin.js"
+    ],
+    "refer": []
+  },
+  "index.html": {
+    "resources": [
+      "js/getDate.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
     ],
     "refer": []
   }

@@ -61,9 +61,9 @@
     
     <script type="text/javascript" src="../js/jquery-3.0.0.min.js" ></script>
     <script type="text/javascript" src="../js/HttpCore/HttpBase.js" ></script>
+    <script type="text/javascript" src="../js/Connectors/ConnectLogin.js" ></script>
 	<script>
 	
-	    var HTTPHost = "http://xingxueke.gicp.net:18000";
 		var usernameInput = document.getElementById("username");
 		var passwordInput = document.getElementById("password");
 		var repasswordInput = document.getElementById("repassword");
@@ -86,53 +86,14 @@
 				return;
 			}
 
-            var httpHost = "http://xingxueke.gicp.net:18000";
-
-            var oReq = new XMLHttpRequest();
-            oReq.open("POST",httpHost);
-            oReq.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+             
             
-            var data = new Object();
+			var data = new Object();
             data.username = usernameInput.value;
             data.password = passwordInput.value;
             
-            var jsond = JSON.stringify(data);
-
-            oReq.send('method=register&data='+ jsond.toString());
-            oReq.onreadystatechange = function()
-            {
-            	if(oReq.readyState == 4)
-            	{
-            		var response = $.parseJSON(oReq.responseText);
-            		var result = response[''+"result"+''];
-            		if(result == 0)
-            		{
-            			alert("注册成功");
-            			mui.back();
-            		}
-            		else{
-            			alert(response[''+"tips"+'']);
-            		}
-            	}
-            }    
-//          mui.ajax(httpHost,{
-//          	data:formdata,
-//          	dataType:'json',
-//          	type:'post',
-//          	contentType:'multipant/form-data',
-//          	timeout:8000,
-//          	success:function(data){
-//          		console.log(data);
-//          		
-////          		mui.alert("注册成功","","确定",function(){
-////          			mui.back();
-////          		});
-//          	},
-//          	error:function()
-//          	{
-//          		 mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
-//          	}
-//          });
+            register(data);
+             
 		}
 	</script>
 
