@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "login/login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -197,7 +197,10 @@
 					"css/mui.min.css",
 					"js/jquery-3.0.0.min.js",
 					"js/HttpCore/HttpBase.js",
-					"js/Connectors/ConnectLogin.js"
+					"js/Connectors/ConnectLogin.js",
+					"js/app.js",
+					"css/style.css",
+					"js/mui.enterfocus.js"
 				],
 				"refer": [
 					"loginModule/register.html",
@@ -226,6 +229,25 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"login/login.html": {
+				"priority": 0,
+				"resources": [
+					"css/style.css",
+					"css/mui.css",
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"res/images/qihoo.png",
+					"res/images/sinaweibo.png",
+					"res/images/qq.png",
+					"res/images/weixin.png",
+					"js/app.js"
+				],
+				"refer": [
+					"main.html",
+					"login/register.html"
+				]
 			}
 		},
 		"idle": {
@@ -239,7 +261,6 @@
 				"study/index.html",
 				"js/mui.js",
 				"resource/2.jpg",
-				"css/mui.css",
 				"study/study.html"
 			]
 		}
