@@ -42,10 +42,18 @@
 			"css/mui.min.css",
 			"css/style.css",
 			"js/mui.enterfocus.js",
-			"js/app.js"
+			"js/app.js",
+			"js/System/systemswitch.js",
+			"js/jquery-3.0.0.min.js",
+			"js/Connectors/ConnectLogin.js",
+			"js/HttpCore/HttpBase.js",
+			"js/System/SystemSwitch.js",
+			"fonts/mui.ttf"
 		],
 		"refer": [
-			"login/main.html"
+			"login/main.html",
+			"login/register.html",
+			"login/forget_password.html"
 		]
 	},
 	"login/main.html": {
@@ -54,6 +62,24 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"css/style.css"
-		]
+		],
+		"refer": []
+	},
+	"login/register.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"js/jquery-3.0.0.min.js",
+			"css/mui.min.css",
+			"js/Connectors/ConnectLogin.js",
+			"js/HttpCore/HttpBase.js"
+		],
+		"refer": []
+	},
+	"login/forget_password.html": {
+		"resources": [
+			"js/app.js"
+		],
+		"refer": []
 	}
 }

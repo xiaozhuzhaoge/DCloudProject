@@ -13,88 +13,105 @@
 		</header>
 
 		<style type="text/css">
-			.mui-content-padded {
+		.mui-content-padded {
 				margin-top: 15%;
 			}
 			
 			#registerBtr {
-				margin-top: 90%;
+				margin-top: 20%;
 			}
+			
+			.mui-backdrop {
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 998;
+				background-color: rgba(50, 50, 50, .3);
+			}
+			
+			.mui-icon-person {
+				font-size: 28px;
+				margin-top: -4px;
+			}
+			
+			.mui-icon-locked {
+				margin-left: 3px;
+				margin-top: -3px;
+			}
+			
+			.mui-icon-checkmarkempty {
+				margin-left: -1px;
+				font-size: 34px;
+				margin-top: -10px;
+			}
+		}
 		</style>
 
 	</head>
 
 	<body>
-		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
 
-		<div class="mui-content">
+		<div class="mui-content own-content-padding">
 			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label>用户名</label>
+			
+					<div class="mui-input-row">
+					<label><span class="mui-icon mui-icon-person"></span></label>
 					<input id="username" type="text" class="mui-input-clear" placeholder="请输入用户名">
-
 				</div>
 				<div class="mui-input-row">
-					<label>密码</label>
-					<input id="password" type="text" class="mui-input-clear" placeholder="请输入密码">
-
+					<label><span class="mui-icon mui-icon-locked"></span></label>
+					<input id="password" type="password" class="mui-input-clear" placeholder="请输入密码">
 				</div>
 				<div class="mui-input-row">
-					<label>密码验证</label>
-					<input id="repassword" type="text" class="mui-input-clear" placeholder="请再此输入密码">
-
+					<label><span class="mui-icon mui-icon-checkmarkempty"></span></label>
+					<input id="repassword" type="password" class="mui-input-clear" placeholder="请再此输入密码">
 				</div>
+	
+				
 			</form>
 
-			<div class="mui-content-padded">
-				<button id="registerBtr" type="button" class="mui-btn mui-btn-green mui-btn-block">注册</button>
-			</div>
-
 		</div>
+		<div class="mui-content-padded">
+			<button id="registerBtr" type="button" class="mui-btn mui-btn-green mui-btn-block">注册</button>
 		</div>
 
-		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="../js/HttpCore/HttpBase.js"></script>
+		<script type="text/javascript" src="../js/Connectors/ConnectLogin.js"></script>
+		<script type="text/javascript">
+			
+			var regClick = false;
+			function initPage() {
+
+				var usen = document.getElementById("username");
+				var pass = document.getElementById("password");
+				var reg = document.getElementById("registerBtr");
+				
+                reg.addEventListener('tap',function(){
+                	
+                	var data = new Object();
+					data.username = usen.value;
+					data.password = pass.value;
+					reg.disabled = true;  
+					
+                    StartRegister(data,reg);
+                	
+                })
+			}
+		 
+		</script>
+		
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(e){
+
+				initPage();
+			})
+			
+		</script>
 	</body>
-    
-    <script type="text/javascript" src="../js/jquery-3.0.0.min.js" ></script>
-    <script type="text/javascript" src="../js/HttpCore/HttpBase.js" ></script>
-    <script type="text/javascript" src="../js/Connectors/ConnectLogin.js" ></script>
-	<script>
-	
-		var usernameInput = document.getElementById("username");
-		var passwordInput = document.getElementById("password");
-		var repasswordInput = document.getElementById("repassword");
-
-		var reg = document.getElementById("registerBtr");
-
-		reg.onclick = function() {
-			if (usernameInput.value.length == 0) {
-				mui.toast("用户名不能为空");
-				return;
-			}
-
-			if (passwordInput.value.length == 0) {
-				mui.toast("密码不能为空");
-				return;
-			}
-
-			if (repasswordInput.value.length == 0) {
-				mui.toast("密码不能为空");
-				return;
-			}
-
-             
-            
-			var data = new Object();
-            data.username = usernameInput.value;
-            data.password = passwordInput.value;
-            
-            register(data);
-             
-		}
-	</script>
 
 </html>

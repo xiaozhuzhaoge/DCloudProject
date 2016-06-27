@@ -1,4 +1,3 @@
-
 /*
  * Http Post
  * uri 发送请求URI
@@ -7,23 +6,44 @@
  * success success回调
  * fail 失败回调
  */
-function PostData(uri, pre, sendfrom, success, fail) {
+function PostData(uri, method, data, successFun, failFun, errorFun) {
 
-	var oReq = new XMLHttpRequest();
-	oReq.open("POST", uri);
-	oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	var jsond = JSON.stringify(sendfrom);
-
-	oReq.send(pre + jsond.toString());
-	oReq.onreadystatechange = function() {
-		if (oReq.readyState == 4) {
-			var response = $.parseJSON(oReq.responseText);
+	var jsond = JSON.stringify(data);
+	console.log(jsond);
+	mui.ajax(uri, {
+		data: {
+			method: method,
+			data: jsond.toString()
+		},
+		dataType: 'text',
+		type: 'post',
+		timeout: 5000,
+		success: function(data) {
+			var response = $.parseJSON(data);
 			var result = response['' + "result" + ''];
 			if (result == 0) {
-				success(response);
+				successFun(response);
 			} else {
-				fail(response);
+				failFun(response);
 			}
+		},
+		error: function(xhr, type, errorThrown) {
+			mui.toast('与服务器连接失败，请检查您的网络后再重试');
+			errorFun(xhr);
 		}
-	}
+	})
+
+}
+
+function GetData(uri, method, data , successFun , failFun , errorFun)
+{
+	fvar jsond = JSON.stringify(data);
+	console.log(jsond);
+	mui.ajax(uri, {
+		data:{
+			method:method,
+			data:json.toString()
+		},
+		
+	})
 }
