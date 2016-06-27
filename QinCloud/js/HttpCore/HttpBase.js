@@ -35,15 +35,15 @@ function PostData(uri, method, data, successFun, failFun, errorFun) {
 
 }
 
-function GetData(uri, method, data , successFun , failFun , errorFun)
-{
-	fvar jsond = JSON.stringify(data);
-	console.log(jsond);
-	mui.ajax(uri, {
-		data:{
-			method:method,
-			data:json.toString()
-		},
-		
-	})
-}
+//function GetData(uri, method, data , successFun , failFun , errorFun)
+//{
+//	fvar jsond = JSON.stringify(data);
+//	console.log(jsond);
+//	mui.ajax(uri, {
+//		data:{
+//			method:method,
+//			data:json.toString()
+//		},
+//		
+//	})
+//}

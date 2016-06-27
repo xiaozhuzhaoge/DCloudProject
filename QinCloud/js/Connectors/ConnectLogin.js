@@ -32,11 +32,14 @@ function StartLogin(data,btn,nextPage,id) {
 	PostData(httpGate, loginHandle, data,
 		function(rep) {
 			mui.toast("登录成功");
-			btn.disable = false;
+			
 			mui.openWindow({
 				url: nextPage,
 				id: id
 			});
+			
+			btn.disable = false;
+	 		
 		},
 		function(rep) {
 			alert(rep['' + "tips" + '']);

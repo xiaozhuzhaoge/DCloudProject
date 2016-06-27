@@ -183,23 +183,25 @@
 			    	mui.toast('密码不能为空');
 			    	return;
 			    }
-			    
+			 
 			    var data = new Object();
 			    data.username = userInput.value;
 			    data.password = passInput.value;
 			    
 			    loginBtr.disabled = true;
+			    
 				StartLogin(data,loginBtr,'main.html','main');
 			});
 		}
 	</script>
 	<script type="text/javascript">
-			mui.init()
-	       
+			mui.init();
 			mui.plusReady(
 				function() {
-					initPage();
+					initPage();	 
+					 
 				})
+			 
 			 
 		</script>
 </html>
